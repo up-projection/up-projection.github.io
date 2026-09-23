@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 100" fill="none">
-  <title>up_proj</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 0 156 100" fill="none">
+  <title>up_projection</title>
   <path d="M3 10H93L62 66H34Z" stroke="#b0b8a8" stroke-width="4" stroke-linejoin="round"/>
-  <text x="48" y="92" text-anchor="middle" fill="#b0b8a8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="19">up_proj</text>
+  <text x="48" y="92" text-anchor="middle" fill="#b0b8a8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="19">up_projection</text>
 </svg>
