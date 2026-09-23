@@ -1,0 +1,837 @@
+/* Charcoal, soft cream, and sage theme. */
+[data-md-color-scheme="default"][data-md-color-primary],
+[data-md-color-scheme="slate"][data-md-color-primary] {
+    color-scheme: dark;
+    --md-accent-fg-color--transparent: rgba(176, 184, 168, 0.1);
+    --md-accent-bg-color--light: #21251f;
+    --md-default-bg-color: #171916;
+    --md-default-fg-color: #d3d0bf;
+    --md-default-fg-color--light: #a5ab9f;
+    --md-default-fg-color--lighter: #a5ab9f;
+    --md-default-fg-color--lightest: #383d35;
+    --md-primary-fg-color: #171916;
+    --md-primary-fg-color--light: #21251f;
+    --md-primary-fg-color--dark: #171916;
+    --md-primary-bg-color: #d3d0bf;
+    --md-primary-bg-color--light: #a5ab9f;
+    --md-accent-fg-color: #b0b8a8;
+    --md-accent-bg-color: #171916;
+    --md-code-bg-color: #21251f;
+    --md-code-fg-color: #d3d0bf;
+    --md-footer-bg-color: #171916;
+    --md-footer-bg-color--dark: #171916;
+    --md-footer-fg-color: #d3d0bf;
+    --md-typeset-color: #d3d0bf;
+    --md-typeset-a-color: #b0b8a8;
+    background-color: #171916 !important;
+    color: #d3d0bf !important;
+}
+
+/* Force body and main containers */
+body {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.md-main,
+.md-content {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.md-sidebar {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+/* Hide sidebars only on desktop (larger screens) */
+@media screen and (min-width: 76.25em) {
+    /* Hide left sidebar (navigation) */
+    .md-sidebar--primary {
+        display: none !important;
+    }
+    
+    /* Hide right sidebar (table of contents) */
+    .md-sidebar--secondary {
+        display: none !important;
+    }
+    
+    /* Make content full width when sidebars are hidden */
+    .md-sidebar--primary ~ .md-content {
+        margin-left: 0 !important;
+    }
+    
+    .md-content {
+        margin-right: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .md-content__inner {
+        margin: 0 auto !important;
+        max-width: 1200px !important;
+        padding: 2rem !important;
+    }
+}
+
+/* Remove blog plugin's default styling that creates white bars */
+.md-content__inner::before {
+    content: none !important;
+}
+
+.mdx-container {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.mdx-hero {
+    background-color: var(--md-default-bg-color) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Blog index: automatic date/title list of published posts */
+.blog-list {
+    margin-top: 2rem !important;
+}
+
+.blog-list__item {
+    display: grid !important;
+    grid-template-columns: minmax(8.5rem, auto) 1fr !important;
+    align-items: baseline !important;
+    column-gap: 1.2rem !important;
+    margin: 1.1rem 0 !important;
+    padding: 0 0 1.1rem !important;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest) !important;
+}
+
+.blog-list__item:last-child {
+    border-bottom: 0 !important;
+}
+
+.blog-list__item time {
+    color: var(--md-default-fg-color--light) !important;
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+}
+
+.blog-list__item p {
+    margin: 0 !important;
+}
+
+.blog-list__item a {
+    font-size: 1.05rem !important;
+    line-height: 1.45 !important;
+}
+
+@media screen and (max-width: 44.9375em) {
+    .blog-list__item {
+        display: block !important;
+    }
+
+    .blog-list__item time {
+        display: block !important;
+        margin-bottom: 0.2rem !important;
+    }
+}
+
+/* Header styling */
+.md-header {
+    background-color: var(--md-default-bg-color) !important;
+    color: var(--md-default-fg-color) !important;
+}
+
+/* Navigation tabs - always visible with same style */
+.md-tabs {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.md-tabs__link {
+    color: var(--md-default-fg-color) !important;
+}
+
+.md-tabs__link--active {
+    color: var(--md-default-fg-color) !important;
+}
+
+/* Footer styling */
+.md-footer {
+    background-color: var(--md-default-bg-color) !important;
+    color: var(--md-default-fg-color) !important;
+    border-top: none !important;
+}
+
+.md-footer-meta {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.md-footer-meta__inner {
+    color: var(--md-default-fg-color) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    padding: 1rem 0.8rem !important;
+}
+
+/* Copyright text - left aligned with proper color */
+.md-footer-meta__inner .md-copyright,
+.md-footer-meta__inner .md-footer-copyright,
+.md-footer-meta__inner > div:first-child {
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--md-default-fg-color) !important;
+}
+
+/* Force text color in footer */
+.md-footer-meta__inner,
+.md-footer-meta__inner *,
+.md-footer-meta__inner a {
+    color: var(--md-default-fg-color) !important;
+}
+
+/* Social icons - below text, left aligned */
+.md-footer-meta__inner .md-social {
+    display: flex !important;
+    gap: 1rem !important;
+    margin: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.md-social__link {
+    color: var(--md-default-fg-color) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.md-social__link svg {
+    fill: var(--md-default-fg-color) !important;
+    color: var(--md-default-fg-color) !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.md-social__link:hover {
+    opacity: 0.7 !important;
+}
+
+.md-social__link:hover svg {
+    fill: var(--md-default-fg-color) !important;
+}
+
+/* Reserve room for the enlarged polygon and terminal-style label. */
+.md-header__inner {
+    height: 96px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Up-projection mark replaces the text wordmark at every screen size. */
+.md-header__button.md-logo {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.md-header__button.md-logo img {
+    width: 72px;
+    height: 75px;
+    max-width: none;
+}
+
+.md-header__button.md-logo:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: 2px;
+}
+
+.md-search {
+    display: none;
+}
+
+/* Hide hamburger menu button - we don't need it since we have tabs */
+.md-header__button[for="__drawer"] {
+    display: none !important;
+}
+
+/* Keep the site name in metadata without a visible text logo. */
+.md-header__title {
+    display: none;
+}
+
+/* Position tabs on same line as header - Apple style - DESKTOP ONLY */
+@media screen and (min-width: 76.25em) {
+    .md-header {
+        box-shadow: none;
+        height: 96px;
+    }
+
+    .md-header__title {
+        max-width: calc(50vw - 8rem);
+        min-width: 0;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    .md-header__topic {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .md-tabs {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        height: 96px;
+        z-index: 2;
+    }
+
+    .md-tabs__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        height: 96px;
+    }
+
+    .md-tabs__item {
+        height: 96px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .md-tabs__link {
+        margin: 0;
+        padding: 0 1rem;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        opacity: 0.8;
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    .md-tabs__link--active {
+        opacity: 1;
+    }
+
+    .md-tabs__link:hover {
+        opacity: 1;
+    }
+}
+
+/* Mobile navigation fixes - TABLET AND MOBILE */
+@media screen and (max-width: 76.1875em) {
+    /* Fix header positioning */
+    .md-header {
+        box-shadow: none;
+        position: fixed;
+        z-index: 1001;
+        width: 100%;
+    }
+    
+    /* Show tabs on mobile instead of hamburger menu */
+    .md-tabs {
+        display: block !important;
+        position: fixed !important;
+        top: 96px !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        background-color: var(--md-default-bg-color) !important;
+        z-index: 1000 !important;
+    }
+    
+    /* Center the tabs and make them responsive */
+    .md-tabs__list {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem 0.25rem;
+        flex-wrap: nowrap;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .md-tabs__item {
+        flex: 1 1 auto;
+        white-space: nowrap;
+        text-align: center;
+    }
+    
+    .md-tabs__link {
+        padding: 0 0.25rem;
+        font-size: 0.75rem;
+        justify-content: center;
+    }
+    
+    /* Add padding to content to account for fixed header + tabs */
+    .md-main {
+        padding-top: calc(96px + 2.5rem) !important;
+    }
+    
+    .md-content {
+        padding-top: 0 !important;
+    }
+    
+    /* Hide the drawer/sidebar completely on mobile */
+    .md-sidebar--primary {
+        display: none !important;
+    }
+    
+    /* Hide overlay */
+    .md-overlay {
+        display: none !important;
+    }
+}
+
+/* Extra small devices - even smaller text */
+@media screen and (max-width: 400px) {
+    .md-tabs {
+        top: 96px !important;
+    }
+    
+    .md-tabs__link {
+        padding: 0 0.15rem;
+        font-size: 0.7rem;
+    }
+    
+    .md-tabs__list {
+        padding: 0.5rem 0.15rem;
+    }
+    
+    /* Adjust padding for smaller header */
+    .md-main {
+        padding-top: calc(96px + 2.5rem) !important;
+    }
+}
+
+/* Hero section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0 -1rem -1.5rem -1rem;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.9);
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-indicator:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.scroll-indicator svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    display: block;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) translateY(15px);
+        opacity: 0.7;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    color: #fff;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-section .md-button {
+    background: #fff;
+    color: #000000;
+    border: 2px solid #fff;
+}
+
+.hero-section .md-button:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Product Section */
+.product-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+/* Product Visual Placeholder */
+.product-visual-placeholder {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 0 auto 4rem;
+    border-radius: 20px;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-md-color-scheme="default"] .product-visual-placeholder {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+[data-md-color-scheme="slate"] .product-visual-placeholder {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.product-visual-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+.product-placeholder-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.product-icon {
+    font-size: 6rem;
+    display: block;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+.product-visual-placeholder h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(10%, 10%) scale(1.1);
+    }
+}
+
+.product-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.product-content p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+}
+
+.features-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: -0.02em;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    border: 2px solid;
+}
+
+/* Pure black/white feature cards */
+[data-md-color-scheme="default"] .feature-card {
+    background: #000000;
+    border-color: #333333;
+}
+
+[data-md-color-scheme="slate"] .feature-card {
+    background: #000000;
+    border-color: #333333;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Approach Section */
+.approach-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+}
+
+.approach-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.approach-item {
+    text-align: center;
+}
+
+.approach-item strong {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.approach-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* CTA Section */
+.cta-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.cta-section p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+/* Button Styles - Pure Black/White */
+.md-button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: none;
+    letter-spacing: 0;
+    transition: all 0.3s ease;
+    border: 2px solid;
+}
+
+.md-button--large {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+}
+
+/* High-contrast buttons on the black canvas. */
+[data-md-color-scheme] .md-button--primary {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+[data-md-color-scheme] .md-button--primary:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 76.1875em) {
+    /* Reset tabs positioning for mobile - use default drawer */
+    .md-tabs {
+        position: static;
+        transform: none;
+        left: auto;
+        width: 100%;
+        background-color: var(--md-default-bg-color) !important;
+    }
+    
+    /* Mobile drawer/sidebar */
+    .md-nav--primary {
+        background-color: var(--md-default-bg-color) !important;
+    }
+    
+    .md-nav__link {
+        color: var(--md-default-fg-color) !important;
+    }
+    
+    .md-nav__link--active {
+        color: var(--md-default-fg-color) !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+    
+    .scroll-indicator svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .product-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .product-content p {
+        font-size: 1.2rem;
+    }
+    
+    .features-section h2,
+    .approach-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .feature-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-section {
+        margin: 0 -0.8rem -1rem -0.8rem;
+    }
+}
+
+/* Sage accents for links and the current navigation page. */
+.md-tabs__item--active .md-tabs__link {
+    text-decoration: underline;
+    text-decoration-color: var(--md-accent-fg-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+/* Keep Material's scheme-specific rules from restoring blue links. */
+[data-md-color-scheme] .md-typeset a,
+[data-md-color-scheme] .md-typeset a:visited {
+    color: var(--md-typeset-a-color);
+}
+
+[data-md-color-scheme] .md-typeset a:hover,
+[data-md-color-scheme] .md-typeset a:focus-visible {
+    color: var(--md-default-fg-color);
+}
