@@ -1,0 +1,21 @@
+{# Keep the compact date/title layout; drafts never appear in the list. #}
+{% extends "main.html" %}
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner md-typeset">
+      {% block content %}
+        {% include "partials/content.html" %}
+        <div class="blog-list">
+          {% for post in page.posts if not post.config.draft %}
+            <div class="blog-list__item">
+              <time datetime="{{ post.config.date.created.strftime('%Y-%m-%d') }}">
+                {{ post.config.date.created | date }}
+              </time>
+              <p><a href="{{ post.url | url }}">{{ post.title }}</a></p>
+            </div>
+          {% endfor %}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

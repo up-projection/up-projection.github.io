@@ -1,10 +1,10 @@
 ---
-draft: false
+draft: true
 date: 2024-12-07
 categories:
-  - Personal
+  - Linguistics
 ---
 
-# hello-world
+# Learning the random
 
 Coming soon...
